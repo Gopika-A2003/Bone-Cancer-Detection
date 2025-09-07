@@ -1,140 +1,36 @@
-<br>
-<img src="https://raw.githubusercontent.com/ultralytics/assets/main/logo/Ultralytics_Logotype_Original.svg" width="320">
+## Ultralytics YOLOv8 Example Applications
 
-# 📚 Ultralytics Docs
+This repository features a collection of real-world applications and walkthroughs, provided as either Python files or notebooks. Explore the examples below to see how YOLOv8 can be integrated into various applications.
 
-Ultralytics Docs are the gateway to understanding and utilizing our cutting-edge machine learning tools. These documents are deployed to [https://docs.ultralytics.com](https://docs.ultralytics.com) for your convenience.
+### Ultralytics YOLO Example Applications
 
-[![pages-build-deployment](https://github.com/ultralytics/docs/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/ultralytics/docs/actions/workflows/pages/pages-build-deployment) [![Check Broken links](https://github.com/ultralytics/docs/actions/workflows/links.yml/badge.svg)](https://github.com/ultralytics/docs/actions/workflows/links.yml) [![Check Domains](https://github.com/ultralytics/docs/actions/workflows/check_domains.yml/badge.svg)](https://github.com/ultralytics/docs/actions/workflows/check_domains.yml) [![Ultralytics Actions](https://github.com/ultralytics/docs/actions/workflows/format.yml/badge.svg)](https://github.com/ultralytics/docs/actions/workflows/format.yml) <a href="https://ultralytics.com/discord"><img alt="Discord" src="https://img.shields.io/discord/1089800235347353640?logo=discord&logoColor=white&label=Discord&color=blue"></a>
+| Title                                                                                                                                     | Format             | Contributor                                                                               |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | ----------------------------------------------------------------------------------------- |
+| [YOLO ONNX Detection Inference with C++](./YOLOv8-CPP-Inference)                                                                          | C++/ONNX           | [Justas Bartnykas](https://github.com/JustasBart)                                         |
+| [YOLO OpenCV ONNX Detection Python](./YOLOv8-OpenCV-ONNX-Python)                                                                          | OpenCV/Python/ONNX | [Farid Inawan](https://github.com/frdteknikelektro)                                       |
+| [YOLOv8 .NET ONNX ImageSharp](https://github.com/dme-compunet/YOLOv8)                                                                     | C#/ONNX/ImageSharp | [Compunet](https://github.com/dme-compunet)                                               |
+| [YOLO .Net ONNX Detection C#](https://www.nuget.org/packages/Yolov8.Net)                                                                  | C# .Net            | [Samuel Stainback](https://github.com/sstainba)                                           |
+| [YOLOv8 on NVIDIA Jetson(TensorRT and DeepStream)](https://wiki.seeedstudio.com/YOLOv8-DeepStream-TRT-Jetson/)                            | Python             | [Lakshantha](https://github.com/lakshanthad)                                              |
+| [YOLOv8 ONNXRuntime Python](./YOLOv8-ONNXRuntime)                                                                                         | Python/ONNXRuntime | [Semih Demirel](https://github.com/semihhdemirel)                                         |
+| [YOLOv8 ONNXRuntime CPP](./YOLOv8-ONNXRuntime-CPP)                                                                                        | C++/ONNXRuntime    | [DennisJcy](https://github.com/DennisJcy), [Onuralp Sezer](https://github.com/onuralpszr) |
+| [RTDETR ONNXRuntime C#](https://github.com/Kayzwer/yolo-cs/blob/master/RTDETR.cs)                                                         | C#/ONNX            | [Kayzwer](https://github.com/Kayzwer)                                                     |
+| [YOLOv8 SAHI Video Inference](https://github.com/RizwanMunawar/ultralytics/blob/main/examples/YOLOv8-SAHI-Inference-Video/yolov8_sahi.py) | Python             | [Muhammad Rizwan Munawar](https://github.com/RizwanMunawar)                               |
+| [YOLOv8 Region Counter](https://github.com/RizwanMunawar/ultralytics/blob/main/examples/YOLOv8-Region-Counter/yolov8_region_counter.py)   | Python             | [Muhammad Rizwan Munawar](https://github.com/RizwanMunawar)                               |
+| [YOLOv8 Segmentation ONNXRuntime Python](./YOLOv8-Segmentation-ONNXRuntime-Python)                                                        | Python/ONNXRuntime | [jamjamjon](https://github.com/jamjamjon)                                                 |
+| [YOLOv8 LibTorch CPP](./YOLOv8-LibTorch-CPP-Inference)                                                                                    | C++/LibTorch       | [Myyura](https://github.com/Myyura)                                                       |
+| [YOLOv8 OpenCV INT8 TFLite Python](./YOLOv8-OpenCV-int8-tflite-Python)                                                                    | Python             | [Wamiq Raza](https://github.com/wamiqraza)                                                |
 
-## 🛠️ Installation
+### How to Contribute
 
-[![PyPI version](https://badge.fury.io/py/ultralytics.svg)](https://badge.fury.io/py/ultralytics) [![Downloads](https://static.pepy.tech/badge/ultralytics)](https://pepy.tech/project/ultralytics)
+We greatly appreciate contributions from the community, including examples, applications, and guides. If you'd like to contribute, please follow these guidelines:
 
-To install the ultralytics package in developer mode, ensure you have Git and Python 3 installed on your system. Then, follow these steps:
+1. Create a pull request (PR) with the title prefix `[Example]`, adding your new example folder to the `examples/` directory within the repository.
+2. Make sure your project adheres to the following standards:
+    - Makes use of the `ultralytics` package.
+    - Includes a `README.md` with clear instructions for setting up and running the example.
+    - Refrains from adding large files or dependencies unless they are absolutely necessary for the example.
+    - Contributors should be willing to provide support for their examples and address related issues.
 
-1. Clone the ultralytics repository to your local machine using Git:
+For more detailed information and guidance on contributing, please visit our [contribution documentation](https://docs.ultralytics.com/help/contributing).
 
-   ```bash
-   git clone https://github.com/ultralytics/ultralytics.git
-   ```
-
-2. Navigate to the cloned repository's root directory:
-
-   ```bash
-   cd ultralytics
-   ```
-
-3. Install the package in developer mode using pip (or pip3 for Python 3):
-
-   ```bash
-   pip install -e '.[dev]'
-   ```
-
-- This command installs the ultralytics package along with all development dependencies, allowing you to modify the package code and have the changes immediately reflected in your Python environment.
-
-## 🚀 Building and Serving Locally
-
-The `mkdocs serve` command builds and serves a local version of your MkDocs documentation, ideal for development and testing:
-
-```bash
-mkdocs serve
-```
-
-- #### Command Breakdown:
-
-  - `mkdocs` is the main MkDocs command-line interface.
-  - `serve` is the subcommand to build and locally serve your documentation.
-
-- 🧐 Note:
-
-  - Grasp changes to the docs in real-time as `mkdocs serve` supports live reloading.
-  - To stop the local server, press `CTRL+C`.
-
-## 🌍 Building and Serving Multi-Language
-
-Supporting multi-language documentation? Follow these steps:
-
-1. Stage all new language \*.md files with Git:
-
-   ```bash
-   git add docs/**/*.md -f
-   ```
-
-2. Build all languages to the `/site` folder, ensuring relevant root-level files are present:
-
-   ```bash
-   # Clear existing /site directory
-   rm -rf site
-
-   # Loop through each language config file and build
-   mkdocs build -f docs/mkdocs.yml
-   for file in docs/mkdocs_*.yml; do
-     echo "Building MkDocs site with $file"
-     mkdocs build -f "$file"
-   done
-   ```
-
-3. To preview your site, initiate a simple HTTP server:
-
-   ```bash
-   cd site
-   python -m http.server
-   # Open in your preferred browser
-   ```
-
-- 🖥️ Access the live site at `http://localhost:8000`.
-
-## 📤 Deploying Your Documentation Site
-
-Choose a hosting provider and deployment method for your MkDocs documentation:
-
-- Configure `mkdocs.yml` with deployment settings.
-- Use `mkdocs deploy` to build and deploy your site.
-
-* ### GitHub Pages Deployment Example:
-  ```bash
-  mkdocs gh-deploy
-  ```
-
-- Update the "Custom domain" in your repository's settings for a personalized URL.
-
-![196814117-fc16e711-d2be-4722-9536-b7c6d78fd167](https://user-images.githubusercontent.com/26833433/210150206-9e86dcd7-10af-43e4-9eb2-9518b3799eac.png)
-
-- For detailed deployment guidance, consult the [MkDocs documentation](https://www.mkdocs.org/user-guide/deploying-your-docs/).
-
-## 💡 Contribute
-
-We cherish the community's input as it drives Ultralytics open-source initiatives. Dive into the [Contributing Guide](https://docs.ultralytics.com/help/contributing) and share your thoughts via our [Survey](https://ultralytics.com/survey?utm_source=github&utm_medium=social&utm_campaign=Survey). A heartfelt thank you 🙏 to each contributor!
-
-<!-- Pictorial representation of our dedicated contributor community -->
-
-![Ultralytics open-source contributors](https://github.com/ultralytics/assets/raw/main/im/image-contributors.png)
-
-## 📜 License
-
-Ultralytics presents two licensing options:
-
-- **AGPL-3.0 License**: Perfect for academia and open collaboration. Details are in the [LICENSE](https://github.com/ultralytics/ultralytics/blob/main/LICENSE) file.
-- **Enterprise License**: Tailored for commercial usage, offering a seamless blend of Ultralytics technology in your products. Learn more at [Ultralytics Licensing](https://ultralytics.com/license).
-
-## ✉️ Contact
-
-For bug reports and feature requests, navigate to [GitHub Issues](https://github.com/ultralytics/docs/issues). Engage with peers and the Ultralytics team on [Discord](https://ultralytics.com/discord) for enriching conversations!
-
-<br>
-<div align="center">
-  <a href="https://github.com/ultralytics"><img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-github.png" width="3%" alt="Ultralytics GitHub"></a>
-  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="3%" alt="space">
-  <a href="https://www.linkedin.com/company/ultralytics/"><img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-linkedin.png" width="3%" alt="Ultralytics LinkedIn"></a>
-  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="3%" alt="space">
-  <a href="https://twitter.com/ultralytics"><img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-twitter.png" width="3%" alt="Ultralytics Twitter"></a>
-  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="3%" alt="space">
-  <a href="https://youtube.com/ultralytics"><img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-youtube.png" width="3%" alt="Ultralytics YouTube"></a>
-  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="3%" alt="space">
-  <a href="https://www.tiktok.com/@ultralytics"><img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-tiktok.png" width="3%" alt="Ultralytics TikTok"></a>
-  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="3%" alt="space">
-  <a href="https://www.instagram.com/ultralytics/"><img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-instagram.png" width="3%" alt="Ultralytics Instagram"></a>
-  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="3%" alt="space">
-  <a href="https://ultralytics.com/discord"><img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-discord.png" width="3%" alt="Ultralytics Discord"></a>
-</div>
+If you encounter any questions or concerns regarding these guidelines, feel free to open a PR or an issue in the repository, and we will assist you in the contribution process.
