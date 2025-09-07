@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancer Detection - Single Page</title>
+    <!-- Bootstrap CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #343a40;
+        }
+
+        .navbar a {
+            color: white !important;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        #about {
+            background-color: #ffffff;
+        }
+
+        #case {
+            background-color: #f1f1f1;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #343a40;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Custom styles for images */
+        .image-section img {
+            max-width: 100%; /* Ensure image is responsive */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .case-text {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Cancer Detection</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#case">Case</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" style="background: url('https://max-website20-images.s3.ap-south-1.amazonaws.com/Bone_Cancer_9e4c9187d7.jpg') no-repeat center center / cover; height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+    <div class="container text-center">
+        <h1 class="display-4 text-white">Welcome to Cancer Detection System</h1>
+        <p class="lead text-white">Upload and detect cancerous images using advanced AI techniques.</p>
+        
+        <!-- New Image Upload Section -->
+        <h2 class="text-white mt-4">Upload an Image for Cancer Detection</h2>
+        <center><form action="/upload" method="post" enctype="multipart/form-data" class="mt-3">
+<input type="file" name="image" accept="image/*" required style="width: 300px;" class="form-control mb-3">
+
+            <input type="submit" value="Upload" class="btn btn-primary"></center>
+        </form>
+    </div>
+</section>
+
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About the Project</h2>
+            <p class="text-center">
+                This project utilizes cutting-edge machine learning and deep learning techniques to enhance cancer detection capabilities. Specifically, we have integrated 
+                <strong>YOLOV11</strong> (You Only Look Once, version 11), a state-of-the-art object detection model, with <strong>EfficientNet B3</strong>, a highly efficient 
+                convolutional neural network for segmentation. The combination of these two powerful models allows us to precisely segment and identify cancerous regions in medical 
+                images, such as X-rays, CT scans, and MRIs.
+            </p>
+
+            <p class="text-center">
+                By leveraging YOLOV11’s ability to detect multiple objects in real time and EfficientNet B3’s optimized performance for image classification and segmentation, 
+                we aim to significantly improve the accuracy and speed of detecting cancerous tissues. This approach helps in early diagnosis, reduces the number of false positives 
+                and false negatives, and minimizes the need for unnecessary biopsies or surgeries.
+            </p>
+
+            <p class="text-center">
+                Our team is continuously refining this system, focusing on enhancing model accuracy, reducing computational complexity, and making the solution more scalable 
+                and accessible. The ultimate goal is to provide a tool that can assist medical professionals in diagnosing bone cancer and other critical conditions at an earlier 
+                stage, leading to better patient outcomes and more effective treatment plans.
+            </p>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6 image-section text-center">
+            <img src="{{ url_for('static', filename='images/seg.jpg') }}" alt="Description of Image" class="img-fluid" style="max-height: 300px; width: auto;">
+            <p class="mt-2"><strong>Segmentation of medical images using YOLOV11 and EfficientNet B3.</strong></p>
+        </div>
+        <div class="col-md-6">
+            <p>
+                <strong>Medical Image Segmentation Analysis:</strong> 
+                The segmentation of medical images is a crucial step in diagnosing and analyzing various conditions. In this project, we implemented 
+                advanced deep learning techniques using YOLOV11 and EfficientNet B3 to enhance the accuracy and efficiency of medical image segmentation. 
+                The methods employed allow for precise delineation of anatomical structures, aiding healthcare professionals in their diagnostic processes.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+        <!-- Second Row for Loss and Accuracy -->
+        <div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <img src="{{ url_for('static', filename='images/Figure_1.png') }}" alt="Description of Image" class="img-fluid">
+            <p class="mt-2"><strong>Loss and Accuracy Graph</strong></p>
+        </div>
+        <div class="col-md-6">
+            <p>
+                <strong>Loss and Accuracy Analysis:</strong> 
+                During the training process, we monitored both the loss and accuracy of the model. The goal was to minimize the loss function while 
+                maximizing accuracy. Through iterative training, we were able to achieve remarkable performance, with accuracy consistently improving over time. 
+                The graph on the left shows the reduction in loss and the increase in accuracy as the model learns to make more precise predictions.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+        <div class="row text-center mt-5">
+    <div class="col-md-4"> <!-- Change col-md-6 to col-md-4 for three items in one row -->
+        <h4>Web Developer</h4>
+        <p></p>
+    </div>
+    <div class="col-md-4"> <!-- Change col-md-6 to col-md-4 for three items in one row -->
+        <h4>Python Developer</h4>
+        <p></p>
+    </div>
+    <div class="col-md-4"> <!-- Change col-md-6 to col-md-4 for three items in one row -->
+        <h4>Python Developer</h4>
+        <p></p>
+    </div>
+</div>
+
+    </section>
+
+    <!-- Case Section -->
+    <section id="case">
+        <div class="container">
+            <h2>The Impact of Bone Cancer</h2>
+            <p class="case-text">
+                Bone cancer is a rare but serious form of cancer that originates in the cells of the bone. It typically affects the long bones of the body, such as those in the arms and legs, but it can develop in any bone. The condition weakens the bone structure, making it prone to fractures, causing severe and persistent pain, swelling, and limited mobility.
+            </p>
+
+            <p class="case-text">
+                There are different types of bone cancer, such as osteosarcoma, chondrosarcoma, and Ewing's sarcoma, each of which affects various parts of the bone and responds to treatment differently. Osteosarcoma, for example, is most commonly found in children and adolescents, while chondrosarcoma is more prevalent in adults. Early diagnosis is critical because bone cancer can spread to other parts of the body, such as the lungs, making treatment more challenging and reducing the chances of a full recovery.
+            </p>
+
+            <p class="case-text">
+                Symptoms can vary depending on the type of bone cancer and its location, but common signs include swelling and tenderness around the affected area, persistent bone pain, and an increase in fractures. Diagnostic procedures such as X-rays, MRIs, CT scans, and biopsies are essential for confirming the presence of cancer and determining the best treatment options.
+            </p>
+
+            <p class="case-text">
+                Our project aims to aid in the early detection of bone cancer using machine learning techniques, which can analyze imaging data more quickly and accurately than traditional methods. This technology could lead to more timely interventions, ultimately improving the chances of successful treatment and recovery.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="background-color: #ffffff;">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea class="form-control" id="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Cancer Detection System | All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
